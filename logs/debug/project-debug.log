@@ -1,0 +1,42 @@
+{"level":"INFO","time":"2023-02-05T14:42:58.242+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"DEBUG","time":"2023-02-05T14:57:55.164+0800","caller":"login.service.v1/login_service.go:55","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 591026\n"}
+{"level":"INFO","time":"2023-02-05T14:59:42.643+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T16:16:23.308+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T16:24:44.127+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"DEBUG","time":"2023-02-05T16:24:54.339+0800","caller":"login.service.v1/login_service.go:65","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 601848\n"}
+{"level":"INFO","time":"2023-02-05T16:55:46.828+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"DEBUG","time":"2023-02-05T16:59:07.320+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688089 : 990642\n"}
+{"level":"ERROR","time":"2023-02-05T16:59:30.531+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T16:59:46.573+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:01:35.482+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:03:22.451+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:03:27.381+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"DEBUG","time":"2023-02-05T17:06:41.883+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 786928\n"}
+{"level":"DEBUG","time":"2023-02-05T17:20:38.117+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 921182\n"}
+{"level":"DEBUG","time":"2023-02-05T17:20:46.760+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 872774\n"}
+{"level":"DEBUG","time":"2023-02-05T17:21:00.191+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 307109\n"}
+{"level":"DEBUG","time":"2023-02-05T17:21:19.806+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 488824\n"}
+{"level":"DEBUG","time":"2023-02-05T17:24:17.794+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 930217\n"}
+{"level":"DEBUG","time":"2023-02-05T17:24:22.293+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 180485\n"}
+{"level":"DEBUG","time":"2023-02-05T17:43:53.442+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 469023\n"}
+{"level":"DEBUG","time":"2023-02-05T17:43:55.856+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 736682\n"}
+{"level":"DEBUG","time":"2023-02-05T17:44:12.640+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 192286\n"}
+{"level":"DEBUG","time":"2023-02-05T17:45:09.108+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 579106\n"}
+{"level":"DEBUG","time":"2023-02-05T17:48:36.643+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 433494\n"}
+{"level":"DEBUG","time":"2023-02-05T17:49:00.678+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 888371\n"}
+{"level":"DEBUG","time":"2023-02-05T20:13:15.540+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 171000\n"}
+{"level":"DEBUG","time":"2023-02-05T20:13:24.670+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 464223\n"}
+{"level":"DEBUG","time":"2023-02-05T20:31:46.682+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 011204\n"}
+{"level":"DEBUG","time":"2023-02-05T20:31:59.130+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 010442\n"}
+{"level":"DEBUG","time":"2023-02-05T20:32:04.048+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 885651\n"}
+{"level":"DEBUG","time":"2023-02-05T20:33:09.897+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 345726\n"}
+{"level":"DEBUG","time":"2023-02-05T20:33:41.837+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 049952\n"}
+{"level":"DEBUG","time":"2023-02-05T20:34:47.518+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 331182\n"}
+{"level":"DEBUG","time":"2023-02-05T20:35:13.280+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 675455\n"}
+{"level":"DEBUG","time":"2023-02-05T20:35:18.975+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 764179\n"}
+{"level":"DEBUG","time":"2023-02-05T20:38:57.714+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 204444\n"}
+{"level":"DEBUG","time":"2023-02-05T20:39:33.586+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 347170\n"}
+{"level":"DEBUG","time":"2023-02-05T20:44:18.199+0800","caller":"login.service.v1/login_service.go:69","msg":"将手机号和验证码存入redis成功：REGISTER_17506688066 : 477726\n"}
+{"level":"ERROR","time":"2023-02-05T20:49:00.884+0800","caller":"login.service.v1/login_service.go:94","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T20:57:10.233+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T20:57:12.304+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}

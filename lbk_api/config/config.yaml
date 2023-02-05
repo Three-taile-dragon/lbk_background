@@ -1,0 +1,13 @@
+server:
+  name: "project_api"
+  addr: "127.0.0.1:8080"
+zap:
+  debugFileName: "F:\\Vue3\\lbk_background\\logs\\debug\\project-debug.log"
+  infoFileName: "F:\\Vue3\\lbk_background\\logs\\info\\project-info.log"
+  warnFileName: "F:\\Vue3\\lbk_background\\logs\\error\\project-error.log"
+  maxSize: 500,
+  maxAge: 28,
+  MaxBackups: 3
+etcd:
+  addrs:
+    - "127.0.0.1:2379"

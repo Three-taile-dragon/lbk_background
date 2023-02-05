@@ -1,0 +1,13 @@
+{"level":"INFO","time":"2023-02-05T14:42:58.242+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T14:59:42.643+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T16:16:23.308+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T16:24:44.127+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-05T16:55:46.828+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"ERROR","time":"2023-02-05T16:59:30.531+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T16:59:46.573+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:01:35.482+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:03:22.451+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T17:03:27.381+0800","caller":"login.service.v1/login_service.go:162","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T20:49:00.884+0800","caller":"login.service.v1/login_service.go:94","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T20:57:10.233+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-05T20:57:12.304+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
