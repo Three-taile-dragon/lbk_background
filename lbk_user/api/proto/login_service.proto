@@ -27,7 +27,7 @@ message LoginRequest {
 }
 message LoginResponse{
   MemberMessage member = 1;
-  TokenMessage tokenList = 3;
+  TokenResponse tokenList = 3;
 }
 message MemberMessage {
   int64 id = 1;
@@ -38,15 +38,27 @@ message MemberMessage {
   string email = 6;
   string code =7;
 }
-message TokenMessage{
+message TokenResponse{
   string accessToken = 1;
   string refreshToken = 2;
   string tokenType = 3;
   int64 accessTokenExp = 4;
 }
 
+message TokenRequest {
+  string token = 1;
+  string secret = 2;
+  bool is_encrypt = 3;
+}
+
+message RefreshTokenRequest {
+  string refreshToken = 1;
+}
+
 service LoginService {
   rpc GetCaptcha(CaptchaRequest) returns (CaptchaResponse) {}
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
   rpc Login(LoginRequest) returns (LoginResponse) {}
+  rpc TokenVerify(TokenRequest) returns (LoginResponse){}
+  rpc RefreshToken(RefreshTokenRequest) returns (TokenResponse) {}
 }

@@ -6,3 +6,12 @@
 {"level":"ERROR","time":"2023-02-05T20:49:00.884+0800","caller":"login.service.v1/login_service.go:94","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
 {"level":"ERROR","time":"2023-02-05T20:57:10.233+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
 {"level":"ERROR","time":"2023-02-05T20:57:12.304+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"ERROR","time":"2023-02-09T16:49:44.008+0800","caller":"gorms/gorms.go:28","msg":"数据库连接失败","error":"dial tcp 127.0.0.1:3309: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"ERROR","time":"2023-02-12T18:15:32.997+0800","caller":"router/router.go:53","msg":"grpc地址监听失败"}
+{"level":"ERROR","time":"2023-02-12T18:19:41.536+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T18:20:48.181+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T18:21:42.052+0800","caller":"project.service.v1/project_service.go:36","msg":"首页模块menu数据库存入出错","error":"Error 1146 (42S02): Table 'lbk.ms_project_menu' doesn't exist"}
+{"level":"ERROR","time":"2023-02-12T19:36:55.077+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"Token is expired"}
+{"level":"ERROR","time":"2023-02-12T19:37:07.720+0800","caller":"project.service.v1/project_service.go:36","msg":"首页模块menu数据库存入出错","error":"Error 1146 (42S02): Table 'lbk.ms_project_menu' doesn't exist"}
+{"level":"ERROR","time":"2023-02-12T20:36:58.829+0800","caller":"login.service.v1/login_service.go:218","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T20:37:35.314+0800","caller":"login.service.v1/login_service.go:218","msg":"Token解析失败","error":"signature is invalid"}

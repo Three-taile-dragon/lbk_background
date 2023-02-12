@@ -40,3 +40,43 @@
 {"level":"ERROR","time":"2023-02-05T20:49:00.884+0800","caller":"login.service.v1/login_service.go:94","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
 {"level":"ERROR","time":"2023-02-05T20:57:10.233+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
 {"level":"ERROR","time":"2023-02-05T20:57:12.304+0800","caller":"login.service.v1/login_service.go:161","msg":"数据库出错","error":"sql: transaction has already been committed or rolled back"}
+{"level":"DEBUG","time":"2023-02-05T21:07:32.017+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688066 : 739318\n"}
+{"level":"DEBUG","time":"2023-02-05T21:07:57.823+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688067 : 771163\n"}
+{"level":"DEBUG","time":"2023-02-05T21:10:24.015+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 969794\n"}
+{"level":"DEBUG","time":"2023-02-05T21:12:27.550+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 823670\n"}
+{"level":"DEBUG","time":"2023-02-05T21:13:01.943+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688079 : 945433\n"}
+{"level":"DEBUG","time":"2023-02-05T21:07:32.017+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688066 : 739318\n"}
+{"level":"DEBUG","time":"2023-02-05T21:07:57.823+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688067 : 771163\n"}
+{"level":"DEBUG","time":"2023-02-05T21:10:24.015+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 969794\n"}
+{"level":"DEBUG","time":"2023-02-05T21:12:27.550+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 823670\n"}
+{"level":"DEBUG","time":"2023-02-05T21:13:01.943+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688079 : 945433\n"}
+{"level":"DEBUG","time":"2023-02-05T22:39:13.291+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 951621\n"}
+{"level":"DEBUG","time":"2023-02-05T22:39:42.371+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 832745\n"}
+{"level":"DEBUG","time":"2023-02-05T22:40:01.469+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 151065\n"}
+{"level":"INFO","time":"2023-02-06T11:27:20.106+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"DEBUG","time":"2023-02-06T12:20:21.766+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688066 : 034338\n"}
+{"level":"DEBUG","time":"2023-02-06T12:20:45.928+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688023 : 551847\n"}
+{"level":"ERROR","time":"2023-02-09T16:49:44.008+0800","caller":"gorms/gorms.go:28","msg":"数据库连接失败","error":"dial tcp 127.0.0.1:3309: connectex: No connection could be made because the target machine actively refused it."}
+{"level":"INFO","time":"2023-02-09T16:51:15.741+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-10T11:45:32.190+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"DEBUG","time":"2023-02-10T11:46:14.695+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 869498\n"}
+{"level":"DEBUG","time":"2023-02-10T11:46:40.711+0800","caller":"login.service.v1/login_service.go:70","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 017630\n"}
+{"level":"INFO","time":"2023-02-12T18:15:26.549+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"ERROR","time":"2023-02-12T18:15:32.997+0800","caller":"router/router.go:53","msg":"grpc地址监听失败"}
+{"level":"INFO","time":"2023-02-12T18:17:44.595+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-12T18:17:44.596+0800","caller":"project/router.go:16","msg":"init project router"}
+{"level":"DEBUG","time":"2023-02-12T18:18:37.309+0800","caller":"login.service.v1/login_service.go:71","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 396589\n"}
+{"level":"ERROR","time":"2023-02-12T18:19:41.536+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T18:20:48.181+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T18:21:42.052+0800","caller":"project.service.v1/project_service.go:36","msg":"首页模块menu数据库存入出错","error":"Error 1146 (42S02): Table 'lbk.ms_project_menu' doesn't exist"}
+{"level":"INFO","time":"2023-02-12T19:36:38.038+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-12T19:36:38.038+0800","caller":"project/router.go:16","msg":"init project router"}
+{"level":"ERROR","time":"2023-02-12T19:36:55.077+0800","caller":"login.service.v1/login_service.go:217","msg":"Token解析失败","error":"Token is expired"}
+{"level":"ERROR","time":"2023-02-12T19:37:07.720+0800","caller":"project.service.v1/project_service.go:36","msg":"首页模块menu数据库存入出错","error":"Error 1146 (42S02): Table 'lbk.ms_project_menu' doesn't exist"}
+{"level":"DEBUG","time":"2023-02-12T19:55:10.441+0800","caller":"login.service.v1/login_service.go:71","msg":"将手机号和验证码存入redis成功：REGISTER_17506688088 : 747760\n"}
+{"level":"INFO","time":"2023-02-12T20:34:58.481+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-12T20:34:58.483+0800","caller":"project/router.go:16","msg":"init project router"}
+{"level":"INFO","time":"2023-02-12T20:35:53.449+0800","caller":"user/router.go:15","msg":"init user router"}
+{"level":"INFO","time":"2023-02-12T20:35:53.452+0800","caller":"project/router.go:16","msg":"init project router"}
+{"level":"ERROR","time":"2023-02-12T20:36:58.829+0800","caller":"login.service.v1/login_service.go:218","msg":"Token解析失败","error":"token contains an invalid number of segments"}
+{"level":"ERROR","time":"2023-02-12T20:37:35.314+0800","caller":"login.service.v1/login_service.go:218","msg":"Token解析失败","error":"signature is invalid"}

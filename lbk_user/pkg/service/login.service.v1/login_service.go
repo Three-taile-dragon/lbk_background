@@ -19,10 +19,11 @@ import (
 	"github.com/jinzhu/copier"
 	"go.uber.org/zap"
 	"strconv"
+	"strings"
 	"time"
 )
 
-// grpc 登陆服务实现
+// LoginService grpc 登陆服务实现
 type LoginService struct {
 	login.UnimplementedLoginServiceServer
 	cache       repo.Cache
@@ -192,7 +193,7 @@ func (ls *LoginService) Login(ctx context.Context, req *login.LoginRequest) (*lo
 	//使用jwt生成token
 	memIdStr := strconv.FormatInt(mem.Id, 10)
 	token := jwts.CreateToken(memIdStr, config.C.JC.AccessExp, config.C.JC.AccessSecret, config.C.JC.RefreshSecret, config.C.JC.RefreshExp)
-	tokenList := &login.TokenMessage{
+	tokenList := &login.TokenResponse{
 		AccessToken:    token.AccessToken,
 		RefreshToken:   token.RefreshToken,
 		TokenType:      "bearer",
@@ -202,4 +203,63 @@ func (ls *LoginService) Login(ctx context.Context, req *login.LoginRequest) (*lo
 		Member:    memMessage,
 		TokenList: tokenList,
 	}, nil
+}
+
+// TokenVerify token验证
+func (ls *LoginService) TokenVerify(ctx context.Context, msg *login.TokenRequest) (*login.LoginResponse, error) {
+	c := context.Background()
+	token := msg.Token
+	if strings.Contains(token, "bearer") {
+		token = strings.ReplaceAll(token, "bearer ", "")
+	}
+	//此处为了方便复用，增加一个参数用于接收解析jwt的密钥
+	parseToken, err := jwts.ParseToken(token, msg.Secret)
+	if err != nil {
+		zap.L().Error("Token解析失败", zap.Error(err))
+		return nil, errs.GrpcError(model.NoLogin)
+	}
+	//数据库查询 优化点 登陆之后应该把用户信息缓存起来
+	id, _ := strconv.ParseInt(parseToken, 10, 64)
+	memberById, err := ls.userRepo.FindMemberById(c, id)
+	if err != nil {
+		zap.L().Error("Token验证模块member数据库查询出错", zap.Error(err))
+		return nil, errs.GrpcError(model.DBError)
+	}
+	memMessage := &login.MemberMessage{}
+	err = copier.Copy(&memMessage, memberById)
+	if err != nil {
+		zap.L().Error("Token验证模块memMessage赋值错误", zap.Error(err))
+		return nil, errs.GrpcError(model.CopyError)
+	}
+	if msg.IsEncrypt {
+		memMessage.Code, _ = encrypts.EncryptInt64(memberById.Id, config.C.AC.AesKey) //加密用户ID
+	}
+	return &login.LoginResponse{Member: memMessage}, nil
+}
+
+func (ls *LoginService) RefreshToken(ctx context.Context, req *login.RefreshTokenRequest) (*login.TokenResponse, error) {
+	c := context.Background()
+	//接收参数
+	reqStruct := &login.TokenRequest{
+		Token:     req.RefreshToken,
+		Secret:    config.C.JC.RefreshSecret,
+		IsEncrypt: false, //不加密 返回的用户ID
+	}
+	//校验参数
+	parseRsp, err := ls.TokenVerify(c, reqStruct)
+	if err != nil {
+		return nil, err //失败则返回空
+	}
+	//正确则重新生成Token列表返回
+	memId := parseRsp.Member.Id
+	//使用jwt生成token
+	memIdStr := strconv.FormatInt(memId, 10)
+	token := jwts.CreateToken(memIdStr, config.C.JC.AccessExp, config.C.JC.AccessSecret, config.C.JC.RefreshSecret, config.C.JC.RefreshExp)
+	tokenList := &login.TokenResponse{
+		AccessToken:    token.AccessToken,
+		RefreshToken:   token.RefreshToken,
+		TokenType:      "bearer",
+		AccessTokenExp: token.AccessExp,
+	}
+	return tokenList, nil
 }

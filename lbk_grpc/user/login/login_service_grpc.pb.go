@@ -25,6 +25,8 @@ type LoginServiceClient interface {
 	GetCaptcha(ctx context.Context, in *CaptchaRequest, opts ...grpc.CallOption) (*CaptchaResponse, error)
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	TokenVerify(ctx context.Context, in *TokenRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*TokenResponse, error)
 }
 
 type loginServiceClient struct {
@@ -62,6 +64,24 @@ func (c *loginServiceClient) Login(ctx context.Context, in *LoginRequest, opts .
 	return out, nil
 }
 
+func (c *loginServiceClient) TokenVerify(ctx context.Context, in *TokenRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
+	out := new(LoginResponse)
+	err := c.cc.Invoke(ctx, "/login.service.v1.LoginService/TokenVerify", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *loginServiceClient) RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*TokenResponse, error) {
+	out := new(TokenResponse)
+	err := c.cc.Invoke(ctx, "/login.service.v1.LoginService/RefreshToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LoginServiceServer is the server API for LoginService service.
 // All implementations must embed UnimplementedLoginServiceServer
 // for forward compatibility
@@ -69,6 +89,8 @@ type LoginServiceServer interface {
 	GetCaptcha(context.Context, *CaptchaRequest) (*CaptchaResponse, error)
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	TokenVerify(context.Context, *TokenRequest) (*LoginResponse, error)
+	RefreshToken(context.Context, *RefreshTokenRequest) (*TokenResponse, error)
 	mustEmbedUnimplementedLoginServiceServer()
 }
 
@@ -84,6 +106,12 @@ func (UnimplementedLoginServiceServer) Register(context.Context, *RegisterReques
 }
 func (UnimplementedLoginServiceServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedLoginServiceServer) TokenVerify(context.Context, *TokenRequest) (*LoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TokenVerify not implemented")
+}
+func (UnimplementedLoginServiceServer) RefreshToken(context.Context, *RefreshTokenRequest) (*TokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
 }
 func (UnimplementedLoginServiceServer) mustEmbedUnimplementedLoginServiceServer() {}
 
@@ -152,6 +180,42 @@ func _LoginService_Login_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LoginService_TokenVerify_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoginServiceServer).TokenVerify(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/login.service.v1.LoginService/TokenVerify",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoginServiceServer).TokenVerify(ctx, req.(*TokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LoginService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoginServiceServer).RefreshToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/login.service.v1.LoginService/RefreshToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoginServiceServer).RefreshToken(ctx, req.(*RefreshTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LoginService_ServiceDesc is the grpc.ServiceDesc for LoginService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +234,14 @@ var LoginService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _LoginService_Login_Handler,
+		},
+		{
+			MethodName: "TokenVerify",
+			Handler:    _LoginService_TokenVerify_Handler,
+		},
+		{
+			MethodName: "RefreshToken",
+			Handler:    _LoginService_RefreshToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

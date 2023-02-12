@@ -117,3 +117,28 @@ func (h *HandleUser) register(c *gin.Context) {
 	//4.返回结果
 	c.JSON(http.StatusOK, result.Success(""))
 }
+
+func (h *HandleUser) refreshToken(c *gin.Context) {
+	result := &common.Result{}
+	//获取传入的手机号
+	refreshToken := c.PostForm("refreshToken")
+	//对grpc进行两秒超时处理
+	ctx, canel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer canel()
+	//通过grpc调用 验证码生成函数
+	rrsp, err := LoginServiceClient.RefreshToken(ctx, &login.RefreshTokenRequest{RefreshToken: refreshToken})
+	//结果返回
+	if err != nil {
+		code, msg := errs.ParseGrpcError(err) //解析grpc错误
+		c.JSON(http.StatusOK, result.Fail(code, msg))
+		return
+	}
+	//返回结果
+	rsp := &user.TokenList{}
+	err = copier.Copy(rsp, rrsp)
+	if err != nil {
+		zap.L().Error("Token刷新模块返回赋值错误", zap.Error(err))
+		c.JSON(http.StatusOK, result.Fail(errs.ParseGrpcError(errs.GrpcError(model.SystemError))))
+	}
+	c.JSON(http.StatusOK, result.Success(rrsp))
+}

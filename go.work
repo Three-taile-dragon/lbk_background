@@ -4,5 +4,6 @@ use (
 	./lbk_api
 	./lbk_common
 	./lbk_grpc
+	./lbk_project
 	./lbk_user
 )

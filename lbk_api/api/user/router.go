@@ -25,4 +25,5 @@ func (*RouterUser) Router(r *gin.Engine) {
 	r.POST("/api/getCaptcha", h.getCaptcha)
 	r.POST("/api/login", h.login)
 	r.POST("/api/register", h.register)
+	r.POST("/api/refreshToken", h.refreshToken)
 }

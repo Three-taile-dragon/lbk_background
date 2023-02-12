@@ -61,3 +61,13 @@ func (m *UserDao) FindMember(ctx context.Context, account string, pwd string) (*
 	}
 	return mem, err
 }
+
+func (m *UserDao) FindMemberById(ctx context.Context, id int64) (*user.User, error) {
+	var mem *user.User
+	err := m.conn.Session(ctx).Where("id=?", id).First(&mem).Error
+	if err == gorm.ErrRecordNotFound {
+		//未查询到对应的信息
+		return nil, nil
+	}
+	return mem, err
+}
